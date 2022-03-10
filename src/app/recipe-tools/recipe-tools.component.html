@@ -1,0 +1,32 @@
+<mat-grid-list cols="3" column-width="1:3" >
+    <mat-grid-tile *ngFor="let menu of menus">
+        <mat-card class="meals">
+            <mat-card-header>
+                <mat-card-title>{{menu.name}}</mat-card-title>
+                <mat-card-subtitle>{{menu.Description}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{menu.img}}" alt="">
+            <button mat-fab class="addbtn" (click)="addOrder(menu.name)" color="warn">
+                <mat-icon>add</mat-icon>
+            </button>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<h2>Actual orders : {{totalOrders}} items</h2>
+<mat-card class="orders">
+    <mat-chip-list aria-label="Orders">
+        <ng-container *ngFor="let order of orders" color="accent"  > 
+            <mat-chip *ngIf="order.count != 0">
+                {{order.name}} : {{order.count}}
+                    <button matChipRemove (click)="removeOrder(order.name)">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+            </mat-chip>
+        </ng-container>
+    </mat-chip-list>
+<button mat-mini-fab color="" class="remove" [disabled]="totalOrders==0" (click)="openDelete()" ><mat-icon>delete_sweep</mat-icon></button>
+<button mat-raised-button color="warn" class="validate" [disabled]="totalOrders<=0" (click)="Validate()" >Validate</button>
+</mat-card> 
+

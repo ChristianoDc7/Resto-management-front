@@ -1,0 +1,31 @@
+.meals{
+    width: 30vh;
+    height: 35vh;
+    
+}
+
+.sarikaly{
+    width: 180px;
+}
+
+.addbtn{
+    position: absolute;
+    bottom: -2vh;
+    right: 12vh;
+}
+
+.validate{
+    position: absolute;
+    right: 2vh;
+    top: 2vh;
+}
+
+.remove{
+    position: absolute;
+    right: 15vh;
+    top: 2vh;
+}
+
+.orders{
+    min-height: 30px;
+}

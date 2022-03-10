@@ -1,0 +1,28 @@
+li a{
+    
+    text-decoration: none;
+}
+li{
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.sidenav {
+    width: 250px; 
+    display: flex;
+
+}
+.sides{
+    height: 100%;
+}
+
+.conts{
+    padding: 10px;
+}
+
+.routeslist{
+    display: inline;
+}
+.espace{
+    flex: 1 1 auto;
+}

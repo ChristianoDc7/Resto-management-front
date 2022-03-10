@@ -1,0 +1,36 @@
+mat-grid-list{
+    margin-inline: 3vh ;
+}
+
+mat-accordion , mat-card , mat-divider{
+    position: absolute;
+    top: 3vh;
+    
+}
+mat-accordion{
+    width: 50vh;
+}
+
+mat-grid-tile{
+    height: 30vh;
+    position: absolute;
+    top: 0;
+}
+
+.needs{
+    position: absolute;
+    left: 42.2%;
+    top: 10vh;
+    background-color: rgb(255, 230, 0);
+    
+}
+
+ul>li{
+    list-style: georgian;
+}
+
+.make{
+    position: absolute;
+    right: 43%;
+    font-size: 18px;
+}

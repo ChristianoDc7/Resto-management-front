@@ -1,0 +1,37 @@
+<p>
+  <mat-form-field appearance="legacy">
+    <mat-label>Ingredients</mat-label>
+    <input matInput [(ngModel)]="title" placeholder="here">
+  </mat-form-field>
+</p>
+<div>
+    mande vee <h1>{{title}} {{count}}</h1>
+    {{nom}}
+  </div>
+  <ul>
+      <li *ngFor="let etudiant of mpianatra" [ngStyle]="{color : etudiant.sexe==='m'?'red' : 'green' }"><strong>Anarana :</strong>  {{etudiant.anarana}} , <strong>Asa :</strong> {{etudiant.asa}}</li>
+  </ul>
+  <p *ngIf="tonga">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, corporis. Voluptate officiis aspernatur voluptatum, iusto fugiat expedita voluptas, minima perferendis maxime ad explicabo molestiae labore? Excepturi, corrupti! Unde, explicabo quas?
+  </p>
+  <button mat-raised-button color="warn" (click)='increment()'>Incrementer</button>
+  <button class="btn btn-primary my-2" (click)="alumer()">Toggle</button><br>
+  <button mat-raised-button color="primary" (click)='decrement()'>Decrementer</button>
+  <mat-form-field class="example-chip-list" appearance="fill">
+    <mat-label>Favorite Fruits</mat-label>
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+               [removable]="removable" (removed)="remove(fruit)">
+        {{fruit.name}}
+        <button matChipRemove *ngIf="removable">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input placeholder="New fruit..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>
+  

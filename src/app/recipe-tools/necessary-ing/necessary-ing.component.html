@@ -1,0 +1,48 @@
+<mat-grid-list cols="3">
+    <mat-grid-tile>
+                <mat-accordion multi="true">
+                    <h2> Your Orders : </h2>
+                    <mat-expansion-panel *ngFor="let item of orderact" (opened)='true'>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <mat-icon mat-list-icon>fastfood</mat-icon>
+                                {{item.count}}
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                {{item.name}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        Needs:
+                        <li *ngFor="let list of item.content"><b>{{list.quantity}}</b> {{list.name}}</li>
+                    </mat-expansion-panel>
+                </mat-accordion>
+    </mat-grid-tile>
+    <mat-grid-tile><mat-divider vertical style="height: 50vh ; color: black; width: 12px;"> </mat-divider></mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card>
+            <mat-card-title>
+                <h2> Our actual stocks of ingredients today:</h2>   
+            </mat-card-title>
+            <mat-card-content>
+                <mat-list>
+                    <mat-list-item *ngFor="let list of datas">
+                        <mat-icon mat-list-icon>check_circle</mat-icon>
+                        <div mat-line>{{list.name}} : <b>{{list.quantity}}</b> </div>
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-card class="needs" *ngIf="needslist.length>0">
+    <mat-card-title>
+        <h2>Missing ingredients :</h2>
+    </mat-card-title>
+    <mat-card-content>
+        <ul>
+            <li *ngFor="let item of needslist"> <b>{{item.quantity}}</b> {{item.name}}</li>
+         </ul>
+    </mat-card-content>
+</mat-card>
+<button mat-stroked-button color="warn" (click)='putAll()' class="make"><mat-icon>restaurant_menu</mat-icon> Make the order</button>
