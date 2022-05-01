@@ -43,6 +43,7 @@ import { ProfitComponent } from './price-management/profit/profit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NecessaryIngComponent } from './recipe-tools/necessary-ing/necessary-ing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxContextModule } from 'ngx-context';
 
 export interface Fruit{
   name: string;
@@ -57,7 +58,7 @@ export interface Fruit{
     SalesComponent,
     ProfitComponent,
     NecessaryIngComponent,
-    confirmdelete
+    confirmdelete,
   ],
   imports: [
     AppRoutingModule,
@@ -97,8 +98,8 @@ export interface Fruit{
     MatSortModule,
     MatBadgeModule,
     MatPaginatorModule,
-    HttpClientModule
-
+    HttpClientModule,
+    NgxContextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

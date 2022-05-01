@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit{
 
   @ViewChild(RecipeToolsComponent) child: any ;
   ngAfterViewInit(): void {
-    this.badge = this.child.totalOrders
+    
     console.log(this.badge)
   }
   setbadge(){

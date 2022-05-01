@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesService } from 'src/app/recipes.service';
-import { ingredients } from 'src/app/ingredients';
 
 
 @Component({
   selector: 'app-necessary-ing',
   templateUrl: './necessary-ing.component.html',
-  styleUrls: ['./necessary-ing.component.css'],
-  providers: [RecipesService]
+  styleUrls: ['./necessary-ing.component.css']
 })
 export class NecessaryIngComponent implements OnInit {
   datas : any = [] //donnée provenant du serveur

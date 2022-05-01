@@ -1,8 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { ingredients } from './ingredients';
-import { Observable, throwError } from 'rxjs';
-import { retry,catchError } from 'rxjs';
+import { order } from './order';
 
 
 @Injectable({
@@ -22,7 +21,7 @@ export class RecipesService {
   }
 
   //put request
-  updateIngredients(body: any):any{
+  updateIngredients(body: ingredients):any{
     return this.httpClient.put<ingredients[]>(this.updateUrl, body)
   }
 
@@ -30,7 +29,7 @@ export class RecipesService {
   //session storage 
    key  = "keyorder"
 
- getOrders():any {
+ getOrders() : order[]{
     let orders = window.sessionStorage.getItem(this.key)
     if (!orders) {
         window.sessionStorage.setItem(this.key, JSON.stringify([]));

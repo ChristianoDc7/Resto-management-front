@@ -1,4 +1,5 @@
 export interface ingredients {
-    nom: string,
-    quantity: string
+    name: any;
+    count: any;
+    content: any;
  }
